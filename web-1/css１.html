@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CSS1</title>
+    <style>
+      /*标签选择器{属性:属性值;} 不能设计差异化样式*/
+      h1{
+        color:red;
+        font-size: 50px;
+      }
+      /*定义一个样式累名*/
+      .color-h{
+        color:blue;
+      }
+      .font-big{
+        font-size: 100px;
+      }
+      #color-pink{
+        color:pink;
+      }
+      /*p元素必须属于div的后代元素*/
+      /*后代选择器时从右往左找的*/
+      div p {
+        color: green;
+      }
+      div p span{
+        color:red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>这是一个h1标签</h1>
+
+
+    <!-- 添加class为指定类名，就拥有指定类的样式 -->
+    <h1 class="color-h  font-big">这是一个h1标签</h1>
+
+
+    <!-- id的名称必须在当前页面唯一 -->
+    <h3 id="color-pink">这是一个h3标签</h3>
+
+    <p>这是body的中的p元素</p>
+    <div>
+      <p>div中的p元素<span>变色</span></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    /* 多个选择器共用，交集选择器 */
+    div p.color-1{
+      color:green;
+    }
+    /*将共同的样式抽出来，并集选择器*/
+    h1,span,strong{
+      color: purple;
+    }
+    span{
+     font-size: 15px;
+    }
+    </style>
+  </head>
+  <body>
+    <!-- 交集选择器:满足多个选择器-->
+  <div>
+    <p class="color-1">哈哈</p>
+    <p>嘿嘿</p>
+  </div>
+  <!-- 并集选择器：只要有一个满足就满足 -->
+  <h1>你好</h1>
+  <h2>你也好</h2>
+  <strong>大家都好</strong>
+  <br>
+  <span>爱你</span>
+  </body>
+</html>
