@@ -108,7 +108,7 @@
        4. width:设置表格宽度。
        5. height:设置表格高度。
        6. align:设置对齐格式－－center(居中)---left(左对齐)---right(右对齐)
-       7. colspan(列合并)　＋　rowspan(行合并)  注：用于td标签的属性，属性值即为要合并的行数/列数。
+       7. colspan(跨列)　＋　rowspan(跨行)  注：用于td标签的属性，属性值即为要跨的行数/列数。
 14. <caption>这是个表格标题</caption>： caption 标签必须紧随 table 标签之后。您只能对每个表格定义一个标题。通常这个标题会被居中于表格之上。
 15. <th>强调的单元格</th>
     　　
