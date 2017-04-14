@@ -93,3 +93,25 @@ div span {
 </div>
 ```
    * 注意：后代选择器是从右向左的
+6. 交集选择器：多个选择器共用
+```html
+div p.boss {
+    color:red;
+}
+<div>
+    <p class="boss">刘备</p>
+    <p>关羽</p>
+    <p>张飞</p>
+</div>
+```
+7. 并集选择器：将共同的样式抽出来
+```html
+p, span {
+    color: red;
+}
+<div>
+    <p>张三</p>
+    <p>李四</p>
+    <span>我是span</span>
+</div>
+```
