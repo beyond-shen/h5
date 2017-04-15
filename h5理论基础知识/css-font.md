@@ -50,4 +50,64 @@ p {font-family: “宋体”,“微软雅黑”;}
 
 注意：**word-spacing**和**letter-spacing**均可对英文进行设置。不同的是**letter-spacing**定义的为字母之间的间距，而**word-spacing**定义的为英文单词之间的间距。
 
+## 行间距　line-height(基线之间的间距)
+
+**line-height**属性用于设置行间距，就是行与行之间的距离，即**字符的垂直间距**，一般称为行高。line-height常用的属性值单位有三种，分别为像素px，相对值em和百分比%，实际工作中使用最多的是像素px。
+![](http://i1.piimg.com/1949/304c3161956886fe.png)
+
+从上到下四条线分别是顶线、中线、基线、底线，很像才学英语字母时的四线三格，我们知道vertical-align属性中有top、middle、baseline、bottom，就是和这四条线相关。尤其记得基线不是最下面的线，最下面的是底线。
+注意：
+* 行高是指上下文本行的基线间的垂直距离，即图中两条红线间垂直距离。
+* 行距是指一行底线到下一行顶线的垂直距离，即第一行粉线和第二行绿线间的垂直距离。
+
+## 文本修饰　text-decoration
+
+**text-decoration**属性用于设置文本的默认(none),下划线(underline)，上划线(overline)，删除线(line-through)等装饰效果。
+**注意**：可多个赋值,中间用空格隔开
+```html
+text-decoration: underline overline line-through;
+```
+## 文本对齐
+### 水平对齐　text-aligen
+
+text-align属性用于设置文本内容的水平对齐，相当于html中的align对齐属性。
+1. left：左对齐（默认值）
+2. right：右对齐
+3. center：居中对齐
+
+### 垂直对齐　vertial-align(使用于行内元素)
+
+vertical-align 常用属性值：
+* baseline： 将支持valign特性的对象的内容与基线对齐
+* sub： 垂直对齐文本的下标
+* super： 垂直对齐文本的上标
+* top： 将支持valign特性的对象的内容与对象顶端对齐
+* text-top： 将支持valign特性的对象的文本与对象顶端对齐
+* middle： 将支持valign特性的对象的内容与对象中部对齐
+* bottom： 将支持valign特性的对象的文本与对象底端对齐
+* text-bottom： 将支持valign特性的对象的文本与对象顶端对齐
+注意：要想垂直居中就要用到line-height=容器height
+
+### 首行缩进　text-indent
+
+**text-indent**属性用于设置首行文本的缩进，其属性值可为不同单位的数值、em字符宽度的倍数、或相对于浏览器窗口宽度的百分比%，允许使用**负值**, 建议使用**em作为设置单位**。
+
+## 其他
+### 空白字符处理　white-space
+
+* normal：常规（默认值），文本中的空格、空行无效，满行（到达区域边界）后自动换行。
+* pre：预格式化，按文档的书写格式保留空格、空行原样显示。
+* nowrap：空格空行无效，强制文本不能换行，除非遇到换行标记。内容超出元素的边界也不换行，若超出浏览器页面则会自动增加滚动条。
+### 自动换行　word-break
+
+* normal 使用浏览器默认的换行规则。
+* break-all 允许在单词内换行。
+* keep-all 只能在半角空格或连字符处换行。
+
+### word-wrap
+属性允许长单词或 URL 地址换行到下一行normal
+* normal 只在允许的断字点换行（浏览器保持默认处理）。
+* break-word 在长单词或 URL 地址内部进行换行,几乎得到了浏览器的支持。
+
+
 
