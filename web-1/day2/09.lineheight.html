@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>行高设置垂直居中</title>
+    <style media="screen">
+      div{
+        height: 200px;
+        /*使用百分比,那么这个行高的基数为当前标签字体大小。子元素会继承父元素计算出的行高。*/
+        /*line-height: 100%;*/--/*16px*/
+        /*line-height: 150%;*/--/*24px*/
+        /*使用像素，子元素会继承父元素的行高*/
+        /*line-height: 16px;*/
+        /*line-height: 24px;*/
+        /*使用em，子元素会继承父元素计算出的行高*/
+        /*line-height: 1em;*/--/*16px*/
+        /*line-height: 1.5em;*//*--24px*/
+        /*使用因子，子元素会继承该因子而不是继承父元素行高*/
+        line-height: 1.5;/*行高为因子*本身的行高*/
+      }
+      p{
+        /*text-align: center;*/
+        /*要想垂直居中就要用到line-height:*/
+        /*line-height: 100px;*/
+
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>地方还是快发货速</h1>
+    </div>
+  </body>
+</html>

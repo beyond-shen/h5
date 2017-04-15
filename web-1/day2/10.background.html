@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>背景设置</title>
+    <style media="screen">
+    div{
+      width: 300px;
+      height: 300px;
+    }
+      .one{
+        /*background-color: blue;*/
+        background-color: #F00;
+        background-image: url(./img/2.png);
+        /*平铺:朝右为正x，朝下为正y*/
+        background-repeat: repeat;
+        /*no-repeat,repeat-x,repeat-y*/
+      }
+      .two{
+        width: 300px;
+        height: 200px;
+        background-image: url(./img/1.png);
+        /*直接写位置*/
+        /*background-position: bottom;*/
+        /*要想更好的达到自己的目的，使用数值设置
+        方法:1. 设置起始位置值
+        background-position:0px 0px;
+        ２．去网页移动到自己满意的位置获取x,y值(可负值)
+        ３．代码赋值
+        */
+        background-position: -62px -115px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+    <div class="one">
+      家里附近缩进
+    </div>
+    <div class="two">
+
+    </div>
+  </div>
+  </body>
+</html>

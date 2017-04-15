@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>继承</title>
+    <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    div{
+      color:red;
+      font-size: 50px;
+      height:100px;
+    }
+    </style>
+  </head>
+  <body>
+    <p>1</p>
+    <p>原来短多</p>
+    <h1>你好北京！</h1>
+    <!-- 块内元素的高度不能被继承 ，字体大小被继承-->
+    <div>
+      <p>这是一个段落</p>
+      <!-- a的颜色不可以继承 -->
+      <a href="#">标签颜色变没变</a>
+      <!-- h标签的字体大小不是直接继承的，size＝当前字体大小* 对应比例 -->
+      <!-- １em =当前字体的px值 -->
+
+      <h1>你也好中国！</h1>
+    </div>
+  </body>
+</html>

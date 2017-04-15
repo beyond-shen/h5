@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>css优先级的计算方法</title>
+    <style media="screen">
+    /*
+      多个选择器共同设置样式时：优先级的初始值 = 0
+      出现一个id , 优先级的值 + 100
+      出现一个class  , 优先级的值 + 10
+      出现一个tag , 优先级的值 + 1
+    */
+    div{
+      /*继承*/
+      color: red;
+      font-size: 30px;
+    }
+    p{
+      /*标签*/
+      color: blue;
+      /*优先级＝１大于继承*/
+    }
+    div p{
+      /*后代选择器出现２个标签*/
+      color: green;
+      /*优先级为＝２大于１个标签的*/
+    }
+    .one{
+      /*类选择器*/
+      color:orange;
+      /*优先级为10*/
+    }
+    .two{
+      /*优先级相同覆盖前面*/
+      color:purple;
+    }
+    p.one{
+      /*１个tag＋１个class*/
+      color: yellow;
+      /*优先级为１１*/
+    }
+    #p1{
+      color: gray;
+      /*优先级为１００*/
+    }
+    .three{
+      color: pink !important;
+      /*最大*/
+    }
+
+    </style>
+  </head>
+  <body>
+    <!-- 默认属性 -->
+    <p>这是p</p>
+    <div>
+      <p style="color:#ff24ed;" id="p1" class="one two three">这时div里面的p</p>
+    </div>
+  </body>
+</html>

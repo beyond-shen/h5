@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>伪类选择器</title>
+    <style>
+    /*默认颜色*/
+    .three:link{
+      color: red;
+    }
+    /*访问后的样色*/
+    .three:visited{
+      color: green;
+    }
+    .three:hover{
+      color: yellow;
+    }
+    /*点击时的颜色*/
+    .three:active{
+      color: purple;
+      /*background-color: purple;*/
+    }
+    /*鼠标放在上面的颜色*/
+      /*background-color: yellow;*/
+    </style>
+  </head>
+  <body>
+    <!-- <a href="#">翻山倒海</a> -->
+  <a class="three" href="">发多少</a>
+  </body>
+</html>

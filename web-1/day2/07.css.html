@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>字体的css相关属性</title>
+    <style media="screen">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+      div{
+        /*font-size: 30px;*/
+        /*font-size: 1em;*/
+        /*font-size: 2em;*/
+        height: 100px;
+        /*font-family: "\5b8b\4f53","微软雅黑";*/
+        /*font-weight: bolder;*/
+        /*font-weight:normal; */
+        /*font-style:italic;*/
+        font: italic bolder 30px "宋体";
+        /*color: red;*/
+        /*color: #ff28ef;*/
+        color: rgb(200,100,50); /* 0~255*/
+        letter-spacing: 10px;
+      }
+      p{
+        font-family: "宋体";
+      }
+      h3{
+        color: #15a67f;
+        word-spacing: 30px;
+        line-height: 25px;
+      }
+      .one{
+        /*text-decoration: none;*/
+  			text-decoration: underline overline line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <p>这时原本的p</p>
+    <div class="">
+      <p>这是div里面的p</p>
+    </div>
+    <h3 class="one">打发时间<br>hello world I </h3>
+  </body>
+</html>
