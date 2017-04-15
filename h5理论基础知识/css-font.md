@@ -25,3 +25,29 @@ p {font-family: “宋体”,“微软雅黑”;}
 
 ### font-style
 **font-style**属性用于定义字体风格，如设置斜体(italic)、倾斜(oblique)或正常字体(normal)。
+### font综合设置
+1. 至少要有字号，字体２项
+2. 要有顺序　中间用“空格”隔开:
+```html
+选择器 {
+  font: font-style font-weight font-size/line-height font-family;
+}
+```
+
+## Color:定义文本颜色
+1. 纯色：red,pink,purple等
+2. #+6个16进制：＃ff00ff－－－注意：红绿蓝３种组合，每一种不超过255(2位２进制为１种)
+3. rgb(红,绿,蓝)：rgb(233,23,142)---其中的数值可与16进制转换
+4. rgb(10%,20%,50%)---需要注意的是，如果使用RGB代码的百分比颜色值，取值为0时也不能省略百分号，必须写为0%。
+
+## 字间距：letter-spacing
+
+**letter-spacing**属性用于定义字间距，所谓字间距就是**字符与字符之间**的空白。其属性值可为不同单位的数值，允许使用**负值**，默认为normal。
+
+## 单词间距 word-spacing
+
+**word-spacing**属性用于定义**英文单词之间**的间距，对**中文字符**无效。和letter-spacing一样，其属性值可为不同单位的数值，允许使用负值，默认为normal。
+
+注意：**word-spacing**和**letter-spacing**均可对英文进行设置。不同的是**letter-spacing**定义的为字母之间的间距，而**word-spacing**定义的为英文单词之间的间距。
+
+
