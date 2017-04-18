@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Document</title>
+    <style media="screen">
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .f,.f1{
+        width:300px;
+        height: 100px;
+      }
+      .f{
+        background: green;
+
+        /*float: left;*/
+        position: absolute;
+        top: 0px;
+        left: 0px;
+
+        /*用于设置元素的层级，可以时任意整数*/
+        /*默认情况下设置定位的元素的层级都都比普通元素的层级要高，是大于０小于１的*/
+        /*z-index: -1;*/
+      }
+      .f1{
+        background: yellow;
+        /*z-index的设置只对设置过定位的元素有效*/
+        z-index: 100;
+        /*解决办法：设置定位*/
+        position: relative;
+      }
+      ul{
+        list-style: none;
+        height: 42px;
+        width: 500px;
+        margin:20px auto;
+      }
+
+      /*浮动排列在一行的所有元素，默认情况下元素从左到右增大无限接近于１的*/
+      .list li{
+        width: 100px;
+        height: 40px;
+        border: 1px solid red;
+        float: left;
+        margin-left: -1px;/*解决中间边框宽度为２的问题*/
+      }
+      .list li:hover{
+        border-color: green;
+        /*由于层级问题解决*/
+        z-index: 2;/*一定要写定位一定！！！*/
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="f"></div>
+    <div class="f1"></div>
+
+    <ul class="list">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </body>
+</html>

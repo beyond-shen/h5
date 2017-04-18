@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>隐藏元素</title>
+    <style media="screen">
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .f{
+        height: 100px;
+        background: red;
+
+        /*隐藏一个元素使其不可视，但是仍然占据页面空间*/
+        visibility: hidden;
+        visibility: visible;
+      }
+      .f1{
+        height: 100px;
+        background: yellow;
+
+        /*隐藏一个元素并且不占据页面空间的*/
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="f"></div>
+    <p>第三方接口是大法官可根据地方可根据地方</p>
+    <div class="f1"></div>
+  </body>
+</html>

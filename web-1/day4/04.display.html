@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>display</title>
+    <style media="screen">
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      display属性可以让块元素和行内元素进行转换
+
+      .f{
+        width: 200px;
+        height: 100px;
+        background: yellow;
+        margin-top: 20px;
+        display: inline-block;/*修改为行内块元素，同浮动后的效果差不多(区别有无间隙)*/
+      }
+      .s{
+        width: 600px;
+        height:100px;
+        background: green;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="f"></div>
+    <div class="f"></div>
+
+
+    <span class="s">我是行内元素，我要变成块元素</span>
+
+  </body>
+</html>

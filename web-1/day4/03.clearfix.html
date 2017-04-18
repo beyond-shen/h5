@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>利用伪元素清除浮动</title>
+    <style media="screen">
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      ul{
+        list-style: none;
+      }
+      .clearfix::after,
+      .clearfix::before{
+        content: ""; /*必须有这一行*/
+        height: 0px;
+        clear: both;
+
+        display: block;
+        visibility: hidden;
+
+      }
+      .f li{
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="f clearfix">
+      <li>dsds</li>
+      <li>dd</li>
+      <li>sss</li>
+    </ul>
+  </body>
+</html>
