@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>margin</title>
+    <style media="screen">
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .f1,.f2{
+        width: 500px;
+        height: 100px;
+        border: 5px solid blue;
+        padding: 10px;
+      }
+      /*上下外边距合并，取其中最大值为上下间距*/
+      .f1{
+        background-color: red;
+        margin-bottom: 30px;
+      }
+      .f2{
+        background-color: yellow;
+        border-color: orange;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="f1">就大方大方几点撒范德萨</div>
+    <div class="f2">决定是否收到借款发生的</div>
+  </body>
+</html>

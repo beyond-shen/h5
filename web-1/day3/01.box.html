@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>盒子模型</title>
+    <style media="screen">
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .f{
+        background-color: yellow;
+        width: 500px;
+        height: 100px;
+        /*对于盒子，都遵循上右下左这个顺序*/
+
+        /*上面３项只是对内容区域进行了设置但是不影响div*/
+
+        /*修改padding会影响盒子的大小*/
+
+        /*padding-left: 50px;
+        padding-bottom: 50px;
+        padding-top: 50px;
+        padding-right: 50px;*/
+
+        /*padding的综合设置：对称关系*/
+        /*1个属性值：所有都一样*/
+        /*padding: 50px;*/
+        /*2个属性值：上下－左右*/
+        /*padding: 20px 30px;*/
+        /*３个属性值:上　右左　下*/
+        /*padding: 20px 30px 50px;*/
+        /*4个属性值：上－右－下－左*/
+        padding: 10px 20px 30px 40px;
+
+
+        /*border属性*/
+
+        /*注意：如果没有样式其他属性无效*/
+        /*border-top-width: 10px;
+        border-top-color: red;
+        border-top-style: solid;*/
+
+        /*对于某个位置的综合设置：width style color;*/
+        /*border-top: 10px solid red;*/
+
+        /*对某种属性的设置：前提必须有样式*/
+        /*border-width: 10px;
+        border-color: red green blue orange;
+        border-style: solid;*/
+
+        /*终极设置border:width style color*/
+        /*但是这种某一属性都时统一的如果想修改可额外写*/
+        border: 10px double green;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 块级元素默认的宽度是父元素的宽度，当文本区域装不下时纵向溢出 -->
+    <div class="f">
+      都十分了解点时空里发生大家快发货速度快解放看上的浪费建设的健康方式都会立刻发货的思考方式打开了飞机上打开了房间收到付款链接的说法是打开链接反馈是点击发送的空间是锻炼方式打开了飞机上的考虑收到了开发建设的李开复　速度开飞机上打开了飞机速度分开收到了福建省的附件是打开了房间上的飞机离开是对方设定法律上的发生的离开
+    </div>
+  </body>
+</html>

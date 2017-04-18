@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>盒子用margin居中</title>
+    <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+      .f1{
+        width: 300px;
+        height: 100px;
+        background-color: yellow;
+        border: 5px solid black;
+        /*实现盒子在父元素中的水平居中*/
+
+        /*１．固定写死，但是随着你拖拽网页不会一直居中*/
+        /*margin-left: 200px;
+        margin-right: 200px;*/
+        /*2.将左右边距设置为auto实现盒子在父元素的水平居中:auto只有左右才有用*/
+        /*margin: 0 auto;*/
+        /*margin: auto;*/
+        margin: 50px auto;
+      }
+    </style>
+  </head>
+  <body>
+      <div class="f1"></div>
+  </body>
+</html>
