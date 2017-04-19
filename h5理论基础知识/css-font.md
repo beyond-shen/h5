@@ -33,7 +33,11 @@ p {font-family: “宋体”,“微软雅黑”;}
   font: font-style font-weight font-size/line-height font-family;
 }
 ```
+***
+问：为什么有时候使用**font综合设置时不能字体不能垂直居中了**?
 
+答：当你前面用line-height让文本内容居中时，你后面使用font综合设置时会覆盖上面的line-height，导line-height不等于height
+***
 ## Color:定义文本颜色
 1. 纯色：red,pink,purple等
 2. #+6个16进制：＃ff00ff－－－注意：红绿蓝３种组合，每一种不超过255(2位２进制为１种)
