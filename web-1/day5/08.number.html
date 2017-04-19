@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>数值类型</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var a = 123; //10进制
+      var b = 0123;//8进制使用‘０’开头
+      var c = 0x123;//16进制，使用"0x"开头
+
+      console.log(a,b,c);
+
+      var c = 10.12;
+      var b = 0.12;
+      var a = .12;
+
+      console.log(a,b,c);
+
+      console.log(0.1+0.2);//不等于0.3
+
+      c = 100 + undefined;
+      console.log(typeof c);
+      console.log(c);//结果为NaN
+
+      // 运算
+
+      a  = 10;
+      b = 20;
+
+      //除法，结果就时最终的商可以带小数
+      console.log(a % b);//10
+      console.log(a / b);//0.5
+      console.log(b / a);//2
+
+      console.log(isNaN(10));//false
+      console.log(isNaN("10"));//false
+      console.log(isNaN("blue"));//true
+      console.log(isNaN("undefined"));//true
+      console.log(isNaN(null));//false
+      console.log(isNaN(NaN));//true
+      console.log(isNaN(true));//false
+
+
+    </script>
+  </body>
+</html>
