@@ -1,4 +1,4 @@
-# JavaScript
+# JavaScript(在控制台(conlose)查看)
 
 ## 描述
 是一种直译式脚本语言，是一种动态类型、弱类型、给予原型的语言，内置支持类型，解释器为JavaScript引擎
@@ -27,3 +27,42 @@ ECMAscript:语法
 ### 编写方式
 
 1. 行内样式
+```html
+<button onclick="alert();">点击１</button>
+```
+2. 嵌套样式:写在双标签script里面,script标签的代码是不会在页面上显示的
+```html
+
+<button　id="btn">点击２</button>    
+<script>
+   var btn = document.getElementById("btn");　　//获取页面上id="btn"的元素
+   btn.onclick = function(event){....};　　　　// 添加了一个点击事件
+</script>
+```
+3. 引用外部文件(后缀名为js)
+```html
+<script src="xxx/yyy.js">此处不要写东西</script>
+```
+***
+引入外部js代码，当引入的时候，该代码会立刻执行。但是浏览器会默认在此阻塞，直到该代码加载完毕为止，才能继续执行后面的代码，所以一般下后面。
+***
+
+## 基本语法(ECMAscript)
+
+### 注释
+单行注释－－//
+多行注释－－/**/
+
+### 基本概念
+
+1. 严格区分大小写，
+2. 标识符：（１）由字母，下划线，美元符号（$）和数字组成，但是只能前面3种做第一个字符（２）驼峰大小写格式：也就是第一个字母小写,剩下的每个单词的首字母大写（３）不能使用关键字和保留字
+3. 常用关键词　var可以定义各种类型的变量 
+``html
+<script type="text/javascript">
+var　a = 10;
+var b = "helloworld";
+</script>
+```
+4. 控制台输出：console.log(a);
+5. 代码块的花括号起不到区分作用域的作用，函数名称在js中是以函数区分作用域的。当在一个函数中，可以使用全局变量，但是存在局部变量时会覆盖全局变量。
