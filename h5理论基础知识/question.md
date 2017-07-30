@@ -17,3 +17,85 @@
 2. 稳定性好
 3. 兼容性好
 ***
+4. node.js的优缺点?解决方案
+***
+优点:
+1. 采用事件驱动,异步编程,利用了javascript的匿名函数和闭包特性，使得node.js非常适合做网络服务应用。
+2. 学习成本方面:node.js是以javascript为基础的服务器平台，使得node.js像javascript一样简单易学，容易上手，特别是从事前端开发的人员可以很快上手服务端的开发。
+3. 运行效率方面:node.js非阻塞的I/O处理使得自身可以以相对较低的系统资源占有产生高性能和出众的负载能力，这也使得node.js非常适合依赖于其他I/O资源的中间层服务。
+4. 请求处理方面:node.js简单高效，适合最为数据密集型分布式的部署环境下的实时应用系统的解决方案，适合情景，在响应客户端之前，预计会有很大的流量，但服务器端的处理逻辑不一定很多。  
+
+缺点:
+1. 可靠性低
+2. node.js是单进程，单线程，运行在单核CPU上，不能充分利用多核CPU，一旦这个进程失去响应，那么整个web服务都将崩溃
+
+解决方案:
+1. 开启多个进程，并绑定到不同的端口监听，使用反向代理服务器(Nginx)做负载均衡.使用Nginx的优点:能很好的完成请求的负载均衡任务也能在Nginx分配请求的时候做检查操作,但是只能需要在请求处理中添加中间层
+2. 多个进程绑定到一个端口监听，通过node.js可以在不同进程中发送文件句柄来进行通信
+3.  利用一个进程负责监听，接受请求，之后将请求均匀的分配给其他子进程去处理。(child_process)node.js中有两个模块可以解决多进程的问题:
+multi-node, cluster, 还有一个PM2(第三方模块).但是容易更新不及时，体系复杂庞大，绑定了实际不需要的其他功能，一旦出现问题比较难以解决。  
+***
+5.同步和异步,阻塞和非阻塞
+
+同步:调用发出后,调用不会立即返回直到等到掉用结果
+异步:调用发出后,调用会立即返回继续执行后续的操作,实际处理调用的操作会以状态或者消息来通知调用者，或者通过已定的回调函数来处理调用结果。
+阻塞:调用发出后,会等到系统内核层面完成所有的操作得到结果后才会返回.
+非阻塞:调用发出后,会带着结果立即返回,但是结果不一定是我门想要的,采用轮询的方式得到真正的结果.
+
+6. node.js的事件循环机制
+
+答:调用发出后会立即返回,同时将回调函数注册到事件循环队列中,直到i/o操作,网络通信或数据库操作完成后触发事件然后执行回调函数进行后续操作.(自己理解)
+
+ node.js程序是由事件循环开始，到事件循环结束，所有的逻辑都是事件的回调函数。程序的入口是事件循环的第一个事件的回调函数。事件触发执行回调，再回到事件循环中，如果回调中调用了异步I/O操作，如文件的读写，网络通信，数据库操作等，操作的处理结果会通过回调处理触发新的事件，这些事件会进入事件循环的任务队列中等待进入下次事件循环执行队列并执行，之后重复上述过程知道程序结束。
+ 
+ 7. node.js常用的全局变量
+ 
+ 答:cosole,gloal,Buffers,exports,__dirname(当前文件所在的目录的路径), __filename(当前文件的路径),process
+ 
+ 8. node.js的核心模块
+ 
+ 答:Buffer,http,https,fs,assert,Cluster(集群),events,Stream(流),URL, Query String, Path, child_process,Gloal,colose
+ 
+ 9. node.js的整体结构
+ 
+ 答:
+ node.js在整体上分为三部分:应用app >> V8和nodejs内置架构 >> 系统
+ 
+在上述的中间环节又分为三层:  1. javascript实现的核心模块-----   2.------ c++ 绑定(socket, http, fs ,..) -----3. V8(node的引擎), async I/O (libuv), Event Loop (libuv)  
+
+10. props和state的区别
+
+props是属性，state是状态，两者都是React组件对象，都是组件对象存储和传递数据的载体。
+
+(定义) props 大多数组件在定义时就可以通过各种自定义参数来实现组件的定制。对外提供的这些参数就成为props而state 作为用户交互设计产生的反馈通常都是通过state来进行数据的改变，界面的刷新。
+(作用) props 一般用于父组件向子组件通信，在组件之间通信使用。 state 一般用于组件内部的状态维护，更新组件内部的数据，状态，更新子组件的props等。
+(区别) props用于父组件向子组件传递数据，在组件之间进行通信。state用于组件内的状态维护，更新组件内的数据，状态以及子组件的props属性等。
+
+11. React的生命周期
+
+React组件的生命周期在大的方面分为三部分:mount, update, unmount   
+
+1). mount部分:组件第一次渲染过程:  constructor (组件的构造函数,), getInitialState (设置初始状态属性), componentWillMount, mounting, componentDidMount
+
+2). update部分:改变state后组件更新过程:  componentReciveProps, shouldComponentUpdate(是否执行本次更新true/false), componentWillUpdate, updating, componentDidUpdate   
+
+3). unmount部分:移除组件过程:  componentWillUnmount,unmounting
+
+12. React的实现原理和更新原理
+
+实现原理: React是以组件的形式构建页面上的DOM，并将组件构建为一种状态机，组件的形式是由状态属性决定，状态的属性是组件形式的数据表现。 React组件在加载时，会根据初始的状态属性通过render方法先构建组件的虚拟DOM，再将虚拟DOM渲染到页面中，所以首次加载页面是会慢一些；当行为改变组件状态属性state时，React会生成当前状态对应下的虚拟DOM，并和前一次的虚拟DOM进行diff算法，得到需要改变的DOM，最后将这部分改变的DOM更新到实际的DOM中。
+
+更新原理: (1) 相同的组件产生类似的结构,不同的组件产生不同的结构.可能是节点相同属性不同,可能是节点不同.(2)同一层次的一组子节点,用唯一的key来进行区分.
+
+13. redux的实现原理
+
+Redux中主要由三部分组成：Action, Reducer, Store.
+
+Action用来传递操作state的信息到store，是store的唯一来源。
+
+Reducer用来处理action,通过传入旧的state和action来指明如何更新state。
+
+action用来描述发发生了什么，reducer根据action更新state, Store就是把这几样东西连接到一起的对象
+
+原理如下:首先有一个组件,会触发一个action(这是一个json对象),并通过第三方模块redux和react-redux传递给store(object tree,用来存储状态),store调用reducer来根据action处理并返回新的state,状态发生改变会重新渲染组件,并从store获取相对应的state和属性值以props传递到组件中,渲染UI
+
