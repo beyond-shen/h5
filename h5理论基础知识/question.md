@@ -99,3 +99,4 @@ action用来描述发发生了什么，reducer根据action更新state, Store就�
 
 原理如下:首先有一个组件,会触发一个action(这是一个json对象),并通过第三方模块redux和react-redux传递给store(object tree,用来存储状态),store调用reducer来根据action处理并返回新的state,状态发生改变会重新渲染组件,并从store获取相对应的state和属性值以props传递到组件中,渲染UI
 
+
